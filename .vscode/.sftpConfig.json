@@ -1,0 +1,21 @@
+{
+    "host": "35.198.255.213",
+    "port": 22,
+    "username": "private",
+    "password": null,
+    "protocol": "sftp",
+    "agent": null,
+    "privateKeyPath": "J:/SSH/[Digital Ocean] Private.openssh",
+    "passphrase": null,
+    "passive": false,
+    "interactiveAuth": false,
+    "remotePath": "/home/private/app",
+    "uploadOnSave": true,
+    "syncMode": "full",
+    "ignore": [
+        "**/.vscode/**",
+        "**/.git/**",
+        "**/.DS_Store",
+        "**/__py_cache__"
+    ]
+}
