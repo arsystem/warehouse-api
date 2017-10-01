@@ -5,17 +5,22 @@
     "password": null,
     "protocol": "sftp",
     "agent": null,
-    "privateKeyPath": "J:/SSH/[Digital Ocean] Private.openssh",
+    "privateKeyPath": "D:/SSH/[Digital Ocean] Private.openssh",
     "passphrase": null,
     "passive": false,
     "interactiveAuth": false,
     "remotePath": "/home/private/app",
     "uploadOnSave": true,
     "syncMode": "full",
+    "watcher": {
+        "files": false,
+        "autoUpload": false,
+        "autoDelete": false
+    },
     "ignore": [
         "**/.vscode/**",
         "**/.git/**",
         "**/.DS_Store",
-        "**/__py_cache__"
+        "**/node_modules"
     ]
 }

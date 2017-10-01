@@ -1,6 +1,8 @@
 import falcon
 import json
 
+from lib.middleware.json_encoder import MyJSONEncoder
+
 class JSONTranslator(object):
     """ Translate request from JSON String to Python Dictionary """
 
@@ -36,7 +38,7 @@ class JSONTranslator(object):
         """
         if 'result' not in req.context:
             return
-        resp.body = json.dumps(req.context['result'])
+        resp.body = json.dumps(req.context['result'], cls=MyJSONEncoder)
 
         status_code = req.context["result"]["status"]["code"]
         if status_code == 200:
