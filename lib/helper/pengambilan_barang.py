@@ -27,7 +27,7 @@ class PengambilanBarangHelper:
         pengambilan_barang.customer = Customer(id=document["customer"]["id"])
 
         for barang_document in document["list_barang"]:
-            pengambilan_barang.list_barang(BarangHelper.parse_from_mongo_document(barang_document))
+            pengambilan_barang.list_barang.append(BarangHelper.parse_from_mongo_document(barang_document))
         return pengambilan_barang
 
     @classmethod
@@ -105,7 +105,12 @@ class PengambilanBarangHelper:
             query.append({"$and": tanggal_ambil_query})
         client = pymongo.MongoClient(Config.DATABASE_ADDRESS)
         database = client.tokosumatra
-        documents = database.pengambilan_barang.find({"$and": query})
+
+        if len(query) == 0:
+            documents = database.pengambilan_barang.find({})
+        else:
+            documents = database.pengambilan_barang.find({"$and": query})
+
         list_pengambilan_barang = [PengambilanBarangHelper.parse_from_mongo_document(document) for document in documents]
         client.close()
         return list_pengambilan_barang

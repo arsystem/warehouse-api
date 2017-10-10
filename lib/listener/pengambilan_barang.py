@@ -15,10 +15,10 @@ class ListPengambilanBarangListener:
 
     def on_get(self, req, res):
         """ handle GET requests """
-        start_tanggal_ambil = req.get("start_tanggal_ambil") or None
-        end_tanggal_ambil = req.get("end_tanggal_ambil") or None
-        start_tanggal_entri = req.get("start_tanggal_entri") or None
-        end_tanggal_entri = req.get("end_tanggal_entri") or None
+        start_tanggal_ambil = req.get_param("start_tanggal_ambil") or None
+        end_tanggal_ambil = req.get_param("end_tanggal_ambil") or None
+        start_tanggal_entri = req.get_param("start_tanggal_entri") or None
+        end_tanggal_entri = req.get_param("end_tanggal_entri") or None
         pengambilan_barang = PengambilanBarangHelper.parse_from_query_string(req)
         list_pengambilan_barang = PengambilanBarangHelper.find(
             pengambilan_barang, start_tanggal_entri, end_tanggal_entri,
