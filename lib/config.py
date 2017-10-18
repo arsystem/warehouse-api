@@ -2,4 +2,4 @@
 
 class Config:
     """ Config """
-    DATABASE_ADDRESS = "mongodb://mongo"
+    DATABASE_ADDRESS = "mongodb://10.42.145.78"
